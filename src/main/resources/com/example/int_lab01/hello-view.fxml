@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.int_lab01.HelloController">
+   <top>
+      <AnchorPane prefHeight="53.0" prefWidth="1200.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="143.0" layoutY="12.0" prefHeight="32.0" prefWidth="1158.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Закупочный акт" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="№">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numberActTextField" />
+                  <Label text="Дата">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateActDatePicker" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="1198.0">
+               <children>
+                  <VBox layoutX="40.0" layoutY="40.0" prefHeight="273.0" prefWidth="1158.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="1158.0" spacing="20.0">
+                           <children>
+                              <Label text="Организация" />
+                              <ComboBox fx:id="nameOrgComboBox" editable="true" onAction="#onNameOrgChanged" prefWidth="150.0" />
+                              <Label text="Структурное подразделение" />
+                              <ComboBox fx:id="nameUnitComboBox" editable="true" prefWidth="150.0" />
+                              <Label text="Адрес" />
+                              <TextField fx:id="addressTextField" prefHeight="26.0" prefWidth="400.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></HBox>
+                        <HBox layoutX="30.0" layoutY="30.0" prefHeight="35.0" prefWidth="1158.0" spacing="20.0">
+                           <children>
+                              <Label text="ОКПО" />
+                              <TextField fx:id="okpoTextField" />
+                              <Label text="ИНН" />
+                              <TextField fx:id="innOrgTextField" />
+                              <Label text="Вид деятельности по ОКДП" />
+                              <TextField fx:id="okdpTypeTextField" />
+                              <Label layoutX="451.0" layoutY="10.0" text="Вид операции" />
+                              <TextField fx:id="operationTypeTextField" layoutX="281.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="22.0" prefWidth="1158.0" spacing="20.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <Label text="Место закупки" />
+                              <TextField fx:id="placePurchTextField" prefHeight="26.0" prefWidth="400.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="1158.0" spacing="20.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <Label text="Должность руководителя" />
+                              <ComboBox fx:id="ceoPositionComboBox" editable="true" prefWidth="150.0" />
+                              <Label text="Расшифровка подписи руководителя" />
+                              <TextField fx:id="ceoFioTextField" />
+                           </children></HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <Label text="Мною, " />
+                              <Label text="Должность" />
+                              <TextField fx:id="buyerPositionTextField" />
+                              <Label text="ФИО" />
+                              <TextField fx:id="buyerFioTextField" prefHeight="26.0" prefWidth="220.0" />
+                              <Label text=", " />
+                              <Label text="куплено у " />
+                              <Label text="ФИО" />
+                              <TextField fx:id="sellerFioTextField" prefHeight="26.0" prefWidth="220.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1198.0">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Таблица">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="TOP_RIGHT" prefHeight="17.0" prefWidth="1198.0" spacing="20.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#onAddButtonClick" text="Добавить" />
+                                                <Button mnemonicParsing="false" onAction="#onEditButtonClick" text="Редактировать" />
+                                                <Button mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Удалить" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin></HBox>
+                                          <TableView fx:id="tableView" editable="true" prefHeight="381.0" prefWidth="1158.0">
+                                            <columns>
+                                              <TableColumn fx:id="nameProductColumn" prefWidth="200.0" text="Наименование, хар-ка продукта" />
+                                              <TableColumn fx:id="codeProductColumn" prefWidth="150.0" text="Код продукта" />
+                                                <TableColumn fx:id="measureUnitColumn" prefWidth="150.0" text="Наименование ед. изм." />
+                                                <TableColumn fx:id="codeOKEIColumn" prefWidth="150.0" text="Код по ОКЕИ" />
+                                                <TableColumn fx:id="amountColumn" prefWidth="150.0" text="Количество" />
+                                                <TableColumn fx:id="priceColumn" prefWidth="150.0" text="Цена, руб. коп." />
+                                                <TableColumn fx:id="sumPriceColumn" prefWidth="150.0" text="Сумма, руб. коп." />
+                                            </columns>
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Итого" />
+                                                <TextField fx:id="completeSumTextField" />
+                                                <Label text="руб., прописью" />
+                                                <TextField fx:id="completeSumRubTextField" />
+                                                <Label text="коп., числом" />
+                                                <TextField fx:id="completeSumKopTextField" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Дополнительные сведения">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Паспортные данные" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Серия" />
+                                                <TextField fx:id="seriaPassportTextField" />
+                                                <Label text="№" />
+                                                <TextField fx:id="numberPassportTextField" />
+                                                <Label text="Выдан" />
+                                                <TextField fx:id="issuedByPassportTextField" prefHeight="26.0" prefWidth="400.0" />
+                                                <Label text="Дата" />
+                                                <DatePicker fx:id="dateIssuePassportDatePicker" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Домашний адрес по паспорту" />
+                                                <TextField fx:id="homeAddressPassportTextField" prefHeight="26.0" prefWidth="400.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0">
+                                             <children>
+                                                <Label text="Свидетельство государственной регистрации предпринимателя" />
+                                             </children></HBox>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="№" />
+                                                <TextField fx:id="numberEntCertificateTextField" />
+                                                <Label text="Выдано" />
+                                                <TextField fx:id="issuedByEntCertificateTextField" prefHeight="26.0" prefWidth="400.0" />
+                                                <Label text="Дата" />
+                                                <DatePicker fx:id="dateIssueEntCertificateDatePicker" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="На имя" />
+                                                <TextField fx:id="nameEntCertificateTextField" prefHeight="26.0" prefWidth="220.0" />
+                                                <Label text="ИНН" />
+                                                <TextField fx:id="innEntCertificateTextField" />
+                                                <Label text="Код инспекции, присвоившей ИНН" />
+                                                <TextField fx:id="codeOrgEntCertificateTextField" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Справка о наличии личного подсобного хозяйства (для жителей РФ)" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Выдана" />
+                                                <TextField fx:id="issuedByFarmCertificateTextField" prefHeight="26.0" prefWidth="400.0" />
+                                                <Label text="Дата" />
+                                                <DatePicker fx:id="dateIssueFarmCertificateDatePicker" />
+                                                <Label text="На имя" />
+                                                <TextField fx:id="nameFarmCertificateTextField" prefHeight="26.0" prefWidth="220.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                       <Tab text="Итоги">
+                          <content>
+                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox prefHeight="0.0" prefWidth="1158.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Сумма подоходного налога руб., прописью" />
+                                                <TextField fx:id="taxTextField" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <Label text="Деньги в сумме руб., прописью" />
+                                                <TextField fx:id="completeSumDelRubTextField" />
+                                                <Label text="коп., числом" />
+                                                <TextField fx:id="completeSumDelKopTextField" />
+                                                <Label text="получил продавец" />
+                                                <TextField fx:id="recieverSellerFioTextField" prefHeight="26.0" prefWidth="220.0" />
+                                             </children></HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                       </children></VBox>
+                                 </children>
+                             </AnchorPane>
+                          </content>
+                       </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onExportButtonClicked" text="Экспортировать" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+</BorderPane>
